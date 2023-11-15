@@ -1,52 +1,30 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <style>
-        table {
-            border-collapse: collapse;
-            width: 50%;
-        }
+<?php
+// Membuat variabel untuk menyimpan angka maksimal
+$max = 5;
 
-        table, th, td {
-            border: 1px solid black;
-        }
-    </style>
-</head>
-<body>
+// Membuat tabel dengan dua kolom
+echo "<table border='1'>";
+echo "<tr><th>Ganjil</th><th>Genap</th></tr>";
 
-    <?php
-        echo "<table>";
-
-        // Baris pertama
-        echo "<tr>";
-        echo "<td>Ganjil</td>";
-        echo "<td>Genap</td>";
-        echo "</tr>";
-
-        // Loop untuk baris 2 hingga 6
-        for ($row = 1; $row <= 5; $row++) {
-            echo "<tr>";
-
-            // Kolom pertama (ganjil)
-            if ($row % 2 == 0) {
-                echo "<td></td>"; // Kosongkan kolom jika baris genap
-            } else {
-                echo "<td>$row</td>";
-            }
-
-            // Kolom kedua (genap)
-            if ($row % 2 != 0) {
-                echo "<td></td>"; // Kosongkan kolom jika baris ganjil
-            } else {
-                $angka_genap = $row;
-                echo "<td>$angka_genap</td>";
-            }
-
-            echo "</tr>";
-        }
-
-        echo "</table>";
-    ?>
-
-</body>
-</html>
+// Membuat perulangan dari 1 sampai angka maksimal
+for ($i = 1; $i <= $max; $i++) {
+  // Membuat baris baru untuk setiap iterasi
+  echo "<tr>";
+  // Mengecek apakah angka saat ini ganjil atau genap
+  if ($i % 2 == 1) {
+    // Jika ganjil, menampilkan angka di kolom pertama
+    echo "<td>$i</td>";
+    // Meninggalkan kolom kedua kosong
+    echo "<td></td>";
+  } else {
+    // Jika genap, meninggalkan kolom pertama kosong
+    echo "<td></td>";
+    // Menampilkan angka di kolom kedua
+    echo "<td>$i</td>";
+  }
+  // Menutup baris
+  echo "</tr>";
+}
+// Menutup tabel
+echo "</table>";
+?>
