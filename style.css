@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 30%;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+
+    <?php
+        echo "<table>";
+
+         // Baris pertama
+         echo "<tr>";
+         echo "<td>Ganjil</td>";
+         echo "<td>Genap</td>";
+         echo "</tr>";
+
+        // Loop untuk baris
+    for ($row = 1; $row <= 4; $row++) {
+    echo "<tr>";
+
+    // Kolom pertama (ganjil)
+    $angka_ganjil = $row * 2 - 1;
+    echo "<td>$angka_ganjil</td>";
+
+    // Kolom kedua (genap)
+    if ($angka_ganjil % 2 == 1) {
+        $angka_genap = $angka_ganjil + 1;
+    } else {
+        $angka_genap = $angka_ganjil + 2;
+    }
+
+    echo "<td>$angka_genap</td>";
+
+            echo "</tr>";
+        }
+
+        echo "</table>";
+    ?>
+
+</body>
+</html>
