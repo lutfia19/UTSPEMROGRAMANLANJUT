@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 50%;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+
+    <?php
+        echo "<table>";
+
+        // Baris pertama
+        echo "<tr>";
+        echo "<td>Ganjil</td>";
+        echo "<td>Genap</td>";
+        echo "</tr>";
+
+        // Loop untuk baris 2 hingga 6
+        for ($row = 1; $row <= 5; $row++) {
+            echo "<tr>";
+
+            // Kolom pertama (ganjil)
+            if ($row % 2 == 0) {
+                echo "<td></td>"; // Kosongkan kolom jika baris genap
+            } else {
+                echo "<td>$row</td>";
+            }
+
+            // Kolom kedua (genap)
+            if ($row % 2 != 0) {
+                echo "<td></td>"; // Kosongkan kolom jika baris ganjil
+            } else {
+                $angka_genap = $row;
+                echo "<td>$angka_genap</td>";
+            }
+
+            echo "</tr>";
+        }
+
+        echo "</table>";
+    ?>
+
+</body>
+</html>
